@@ -1,0 +1,30 @@
+nr-reports guideline
+----------------------
+
+Installation of Node 14:
+- sudo apt update
+- sudo apt install curl
+- curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+- sudo apt install -y nodejs
+- node -v (for checking the version. in this case the version should be 14.21.3)
+
+Installation of node dependencies:
+- npm install
+- npm i axios
+
+Install Linux libraries (if not already installed):
+- sudo apt-get install -y libnss3
+- sudo apt-get install -y libxss1
+- sudo apt-get install -y libatk1.0-0
+- sudo apt-get install -y libatk-bridge2.0-0
+- sudo apt-get install -y libcups2
+- sudo apt-get install -y libdrm2
+- sudo apt-get install -y libxcomposite1
+- sudo apt-get install -y libxrandr2
+- sudo apt-get install -y libgbm1
+- sudo apt-get install -y libxkbcommon0
+- sudo apt-get install -y libxdamage1
+- sudo apt-get install -y libxfixes3
+- sudo apt-get install -y libpango1.0-0
+- sudo apt-get install -y libasound2
+

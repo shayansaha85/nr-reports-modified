@@ -1,0 +1,37 @@
+{
+  "name": "nr-reports-lambda",
+  "version": "3.1.2",
+  "author": "sdewitt@newrelic.com",
+  "description": "The New Relic Reports lambda runner.",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/newrelic/nr-reports"
+  },
+  "scripts": {
+    "build": "../deploy/lambda/build.sh -t $npm_package_name:$npm_package_version",
+    "build-full": "npm run build -- --full",
+    "deploy": "../deploy/lambda/deploy.sh -t $npm_package_name:$npm_package_version",
+    "update": "../deploy/lambda/update.sh -t $npm_package_name:$npm_package_version",
+    "logs": "../deploy/lambda/tail-logs.sh",
+    "delete": "../deploy/lambda/delete.sh",
+    "test-image": "../deploy/lambda/test-image.sh -t $npm_package_name:$npm_package_version --lambda-handler nr-reports-lambda/lambda.handler"
+  },
+  "bugs": {
+    "url": "https://github.com/newrelic/nr-reports/issues"
+  },
+  "homepage": "https://github.com/newrelic/nr-reports#readme",
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "nr-reports-core": "file:../nr-reports-core",
+    "puppeteer-core": "^13.7.0"
+  },
+  "devDependencies": {
+    "change-case": "^4.1.2",
+    "js-yaml": "^4.1.0",
+    "yaml-cfn": "^0.3.2"
+  }
+}

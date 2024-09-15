@@ -1,0 +1,34 @@
+{% extends "base/report.html" %}
+     
+{% block content %}
+
+<p style="text-align: center;">
+    <img src="https://1000logos.net/wp-content/uploads/2020/07/Primark-Logo.png" 
+         alt="Description of Image" 
+         style="width: auto; height: auto; max-height: 170px; object-fit: contain;">
+</p>
+
+<h2>The Count of MPE Outbound Queue is greater than 4k for last 15 minutes</h2>
+<p>
+    <strong>Query</strong> : FROM MPE_Outbound SELECT latest(QueueLength)
+</p>
+
+<div class="content">
+        {% chart "FROM RIB_ADAPTERS_DEV_TEST SELECT count(*) AS 'MPE Outbound' SINCE 3 DAYS AGO",
+        type="BILLBOARD",
+        accountId=xxxx
+         %}{% endchart %}
+         
+         <br>
+         
+         {% chart "FROM RIB_ADAPTERS_DEV_TEST SELECT count(*) AS 'MPE Outbound' SINCE 3 DAYS AGO TIMESERIES",
+         type="AREA",
+         accountId=xxxx
+          %}{% endchart %}
+  
+</div>
+
+<br><br>
+<strong>Thanks</strong><br>
+<strong>ICC Dev Team</strong>
+{% endblock %}
